@@ -9,8 +9,9 @@
         <property name="hibernate.connection.password"></property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="show_sql">true</property>
+        <property name="show_sql">false</property>
 		<property name="hbm2ddl.auto">update</property>
         <mapping class="ada.hibernateprueba.dto.PersonaEntity"></mapping>
+        <mapping class="ada.hibernateprueba.dto.VentaEntity"></mapping>
     </session-factory>
 </hibernate-configuration>

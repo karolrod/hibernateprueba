@@ -1,5 +1,8 @@
 package ada.hibernateprueba.dto;
 
+
+
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -13,10 +16,8 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "Persona", uniqueConstraints = {
-		@UniqueConstraint(columnNames = "ID"),
-		@UniqueConstraint(columnNames = "NOMBRE"),
-		@UniqueConstraint(columnNames = "EDAD"),
-		@UniqueConstraint(columnNames = "FECHA_NACIMIENTO")})
+		//solo para colocar los que son unicos
+		@UniqueConstraint(columnNames = "ID"),})
 public class PersonaEntity implements Serializable {
 	
 	private static final long serialVersionUID = -1798070786993154676L;
@@ -26,11 +27,11 @@ public class PersonaEntity implements Serializable {
 	@Column(name = "ID", unique = true, nullable = false)
 	private Integer personaId;
 	
-	@Column(name = "nombre", unique = true, nullable = false, length = 100)
+	@Column(name = "NOMBRE", unique = true, nullable = false, length = 100)
 	private String nombre;
 	
 	@Column(name = "EDAD", unique = false, nullable = false, length = 100)
-	private String edad;
+	private Integer edad;
 	
 	@Column(name = "FECHA_NACIMIENTO", unique = false, nullable = false, length = 100)
 	private String fecha_nacimiento;
@@ -43,27 +44,27 @@ public class PersonaEntity implements Serializable {
 		this.personaId = personaId;
 	}
 
-	public String getnombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setnombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public String getedad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setedad(String edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
-	public String getfecha_nacimineto() {
+	public String getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
 
-	public void setfecha_nacimiento(String fecha_nacimiento) {
+	public void setFecha_nacimiento(String fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 }
